@@ -36,7 +36,7 @@ The second method is using a subschema instead as a value. Using this, the scrip
 ```
 It does not matter if a number is enclosed in `""`
 
-### [Variable parameters](var-param)
+### Variable parameters
 This is the fun part. Parameters that will be varied are put in the `variable-parameters` schema. There are two different ways to specify variable parameters. You can either use a list or a range. Using a range looks like this:
 ```json
 {
@@ -79,7 +79,7 @@ The script will make all combinations of variable parameters. The output of join
 
 `-my_var_param 20 -my_second_var_param "hehe"`
 
-### [Output parameter](#output-param)
+### Output parameter
 Currently, the script only supports one output parameter. This will usually be an output file your program needs. This is specified in the `output-parameter` schema. Here, the parameter your program uses for output must be specified as a key, and the path as the value. The script creates a directory for every parameter combination using this path. These directories are numbered from `0` to the amount of commands created by your parameters. Furthermore, you can set the `type` of this path, either `string` or `literal`. 
 ```json
 "output-parameter": {
@@ -87,7 +87,7 @@ Currently, the script only supports one output parameter. This will usually be a
   "type": "literal"
 }
 ```
-Using this example and the examples from [the variable parameters section](#var-param), since there are 10 total combinations, there will be created 10 new directories in the directory `C:/test`, numbered `0`-`9`.
+Using this example and the examples from [the variable parameters section](#variable-parameters), since there are 10 total combinations, there will be created 10 new directories in the directory `C:/test`, numbered `0`-`9`.
 
 
 
@@ -100,7 +100,7 @@ If you want to prepend or append something to the command, use the `prepend` and
 ```
 
 ### Logs
-Optionally you can enable logs, which write the stdout and stderr to files. This is done by specifying the `logs` schema. Here, the key `path` and `name` can be set. `path` is the path to a directory in which you want to put the logs. This works like [the output parameter](#output-param), whereby it creates directories numbered `0` to the amount of commands created by your parameters. Ideally this should be the same path as used in your `output-parameter`. 
+Optionally you can enable logs, which write the stdout and stderr to files. This is done by specifying the `logs` schema. Here, the key `path` and `name` can be set. `path` is the path to a directory in which you want to put the logs. This works like [the output parameter](#output-parameters), whereby it creates directories numbered `0` to the amount of commands created by your parameters. Ideally this should be the same path as used in your `output-parameter`. 
 
 You can also set the `name` key, to set the name of the file created from the stdout. Stderr will always be called `stderr.txt`.
 ```json
