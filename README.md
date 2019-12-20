@@ -100,7 +100,7 @@ If you want to prepend or append something to the command, use the `prepend` and
 ```
 
 ### Logs
-Optionally you can enable logs, which write the stdout and stderr to files. This is done by specifying the `logs` schema. Here, the key `path` and `name` can be set. `path` is the path to a directory in which you want to put the logs. This works like [the output parameter](#output-parameters), whereby it creates directories numbered `0` to the amount of commands created by your parameters. Ideally this should be the same path as used in your `output-parameter`. 
+Optionally you can enable logs, which write the stdout and stderr to files. This is done by specifying the `logs` schema. Here, the key `path` and `name` can be set. `path` is the path to a directory in which you want to put the logs. This works like [the output parameter](#output-parameter), whereby it creates directories numbered `0` to the amount of commands created by your parameters. Ideally this should be the same path as used in your `output-parameter`. 
 
 You can also set the `name` key, to set the name of the file created from the stdout. Stderr will always be called `stderr.txt`.
 ```json
