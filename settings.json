@@ -1,0 +1,37 @@
+{
+  "program-path": "C:/test/TransClust-2.1.0.54.jar",
+  "logs": {
+    "path": "C:/test",
+    "name": "trans_stdout.txt"
+  },
+  "fixed-parameters": {
+    "-s": {
+      "value": "C:/test/4-cluster-3d-80t.txt",
+      "type": "literal"
+    },
+    "--tmin": 80,
+    "--tmax": 85,
+    "--tstepsize": {
+      "value": 1,
+      "type": "literal"
+    }
+  },
+  "output-parameter": {
+  	"-o": "C:/test",
+  	"type": "literal"
+  },
+  "variable-parameters": {
+    "--FORCEConfig.TEMPERATURE": {
+      "start": 50,
+      "stop": "100",
+      "stepsize": 10,
+      "type": "float"
+    },
+    "--FORCEConfig.ITERATIONS": {
+      "list": [1000,5000,10000],
+      "type": "int"
+    }
+  },
+  "prepend": "java -jar ",
+  "append": ""
+}
